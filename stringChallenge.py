@@ -14,13 +14,13 @@ from typing import List, Any
 def get_string_properties(given_string: str) -> List[Any]:
     string_length: int = len(given_string)
     middle_index: int = int(string_length/2)
-    repeat_index = given_string[1:].find(given_string[1])
+    second_char_repeats = given_string[1:].find(given_string[1])
     return [
         string_length,
         given_string[-1],
         # Uses the fact that int(False) == 0 and int(True) == 1 in python.
         given_string[middle_index: middle_index + 1 + int(string_length % 2 != 0)],
-        f"@ index {repeat_index}" if repeat_index > - 1 else "not found"
+        f"@ index {second_char_repeats}" if second_char_repeats > - 1 else "not found"
     ]
 
 print(get_string_properties("seven"))
