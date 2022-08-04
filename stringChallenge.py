@@ -1,5 +1,4 @@
 from typing import List, Any
-from math import floor
 """ Gets a list of specific properties for a given string.
 
 Returns:
@@ -13,7 +12,7 @@ Returns:
 """
 def get_string_properties(given_string: str) -> List[Any]:
     string_length: int = len(given_string)
-    middle_index: int = floor(string_length/3)
+    middle_index: int = round(string_length/3)
     # Uses the fact that int(False) == 0 and int(True) == 1 in python.
     one_if_middle_is_even = int(string_length % 2 == 0)
     # Second character does not repeat if there is less than 3 characters in the given string.
